@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'footer',
+  selector: 'kn-footer',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './footer.style.css'

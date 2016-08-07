@@ -1,8 +1,9 @@
-html, body{
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-span.active {
-  background-color: gray;
+main {
+  flex: 1 1 auto;
 }
