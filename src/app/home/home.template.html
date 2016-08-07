@@ -1,8 +1,31 @@
 <container>
+
+  <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body">
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body">
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body">
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+    </li>
+  </ul>
+
+
   <h1 x-large class="sample-content">Your Content Here</h1>
 
   <div>
-    For material design components use the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2"><b>material2</b></a> branch
+    For material design components use the <a href="https://github.com/AngularClass/angular2-webpack-starter/tree/material2"><b>material2</b></a>    branch
   </div>
 
   <hr>
@@ -19,10 +42,7 @@
 
     <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
 
-      <input
-        [value]="localState.value"
-        (input)="localState.value = $event.target.value"
-        placeholder="Submit Local State to App State"
+      <input [value]="localState.value" (input)="localState.value = $event.target.value" placeholder="Submit Local State to App State"
         autofocus>
 
       <button md-raised-button color="primary">Submit Value</button>

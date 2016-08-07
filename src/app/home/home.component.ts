@@ -4,6 +4,7 @@ import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
 import { Container } from '../container';
+import {MaterializeDirective} from "angular2-materialize";
 
 @Component({
   // The selector is what angular internally uses
@@ -18,7 +19,8 @@ import { Container } from '../container';
   // Doing so will allow Angular to attach our behavior to an element
   directives: [
     XLarge,
-    Container
+    Container,
+    MaterializeDirective
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
   pipes: [ ],
