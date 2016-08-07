@@ -66,13 +66,17 @@ module.exports = {
    * See: http://webpack.github.io/docs/configuration.html#resolve
    */
   resolve: {
-
+    alias: {
+          materializecss: 'materialize-css/dist/css/materialize.css',
+          materialize: 'materialize-css/dist/js/materialize.js',
+    },
     /*
      * An array of extensions that should be used to resolve modules.
      *
      * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
      */
-    extensions: ['', '.ts', '.js', '.json'],
+    //extensions: ['', '.ts', '.js', '.json', '.css'],
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.css'],
 
     // Make sure root is src
     root: helpers.root('src'),
@@ -161,8 +165,13 @@ module.exports = {
        */
       {
         test: /\.css$/,
-        loaders: ['to-string-loader', 'css-loader']
+        loader: 'css-to-string-loader!css-loader'
       },
+
+      { test: /materialize\.css$/,   loader: 'style-loader!css-loader' },
+
+
+      { test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, loader: 'url-loader?limit=100000' },
 
       /* Raw loader support for *.html
        * Returns file content as string
@@ -173,7 +182,12 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw-loader',
         exclude: [helpers.root('src/index.html')]
-      }
+      },
+
+      {
+        test: /materialize-css\/dist\/js\/materialize\.js/,
+        loader: 'imports?materializecss'
+      },
 
     ]
 
@@ -267,6 +281,13 @@ module.exports = {
     new HtmlElementsPlugin({
       headTags: require('./head-config.common')
     }),
+
+    new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+          "window.jQuery": "jquery",
+          Hammer: "hammerjs/hammer"
+      })
 
   ],
 
