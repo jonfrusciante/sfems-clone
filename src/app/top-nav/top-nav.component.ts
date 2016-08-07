@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import {MaterializeDirective} from "angular2-materialize";
 
 @Component({
   selector: 'top-nav',
@@ -6,7 +7,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrls: [
     './top-nav.style.css'
   ],
-  templateUrl: './top-nav.component.html'
+  templateUrl: './top-nav.component.html',
+  directives: [MaterializeDirective]
 })
 export class TopNav {
 
