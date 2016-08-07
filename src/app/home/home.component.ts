@@ -3,8 +3,9 @@ import { Component } from '@angular/core';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
-import { Container } from '../container';
 import {MaterializeDirective} from "angular2-materialize";
+import { Container } from '../container';
+import { Card } from '../card';
 
 @Component({
   // The selector is what angular internally uses
@@ -20,6 +21,7 @@ import {MaterializeDirective} from "angular2-materialize";
   directives: [
     XLarge,
     Container,
+    Card,
     MaterializeDirective
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
