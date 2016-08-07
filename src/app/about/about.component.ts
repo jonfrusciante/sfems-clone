@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Container } from '../container';
+
 /*
  * We're loading this component asynchronously
  * We are using some magic with es6-promise-loader that will wrap the module with a Promise
@@ -12,7 +14,9 @@ console.log('`About` component loaded asynchronously');
   selector: 'about',
   styles: [`
   `],
+  directives: [Container],
   template: `
+  <container>
     <h1>About</h1>
     <div>
       For hot module reloading run
@@ -24,6 +28,7 @@ console.log('`About` component loaded asynchronously');
       </h3>
     </div>
     <pre>this.localState = {{ localState | json }}</pre>
+    </container>
   `
 })
 export class About {
