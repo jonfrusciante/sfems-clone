@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col s4 offset-s4">
+
+        <div class="card-panel">
+            <!--<div class="page-flexbox-wrapper">-->
+            <h1>Register</h1>
+
+            <form (ngSubmit)="register()">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" [(ngModel)]="email" name="email" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" [(ngModel)]="password" name="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="waves-effect waves-light btn-large" type="submit">Register</button>
+                    </div>
+                </div>
+            </form>
+
+            <!--</div>-->
+        </div>
+    </div>
+</div>
