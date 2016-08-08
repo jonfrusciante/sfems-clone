@@ -10,9 +10,9 @@
   <li>
     <div class="userView">
       <img class="background" src="assets/img/office.jpg">
-      <a href="#!user"><img class="circle" src="assets/img/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">{{ (af.auth | async).uid }}</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a href="#!user"><img class="circle" src="{{ (af.auth | async).auth.photoURL }}"></a>
+      <a href="#!name"><span class="white-text name">{{ (af.auth | async).auth.displayName }}</span></a>
+      <a href="#!email"><span class="white-text email">{{ (af.auth | async).auth.email }}</span></a>
     </div>
   </li>
   <li><a [routerLink]=" ['/home'] ">Home</a></li>
