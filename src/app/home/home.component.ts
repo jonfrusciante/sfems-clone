@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
@@ -34,9 +35,10 @@ import { Card } from '../card';
 export class Home {
   // Set our default values
   localState = { value: '' };
+  stuff: FirebaseListObservable<any[]>;
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
-
+  constructor(public appState: AppState, public title: Title, af: AngularFire) {
+    this.stuff = af.database.list('/stuff');
   }
 
   ngOnInit() {
