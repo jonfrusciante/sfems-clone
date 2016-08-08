@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import {MaterializeDirective} from "angular2-materialize";
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 @Component({
   selector: 'top-nav',
@@ -11,5 +13,12 @@ import {MaterializeDirective} from "angular2-materialize";
   directives: [MaterializeDirective]
 })
 export class TopNav {
+  constructor(public af: AngularFire, private router: Router) {
 
+  }
+
+  logout() {
+    this.af.auth.logout();
+    this.router.navigateByUrl('/login');
+  }
 }

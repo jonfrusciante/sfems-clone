@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import {MaterializeDirective} from "angular2-materialize";
+import { MaterializeDirective } from "angular2-materialize";
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES, ControlGroup, FormBuilder, Validators, AbstractControl } from '@angular/common';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 
 @Component({
   selector: 'login',
   templateUrl: 'login.component.html',
-  directives: [MaterializeDirective],
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, MaterializeDirective],
   styles: [`
   .page-flexbox-wrapper {
     display: flex;
@@ -18,5 +21,22 @@ import {MaterializeDirective} from "angular2-materialize";
   `]
 })
 export class Login {
+  email: string = '';
+  password: string = '';
+
+  constructor(public af: AngularFire, private router: Router) { }
+
+  ngOnInit() { }
+
+  login() {
+    this.af.auth
+      .login({ email: this.email, password: this.password })
+      .catch(error => console.log('ERROR @ AuthService#signIn() :', error))
+      .then((result) => {
+        if (result) {
+          this.router.navigateByUrl('/home');
+        }
+      });
+  }
 
 }

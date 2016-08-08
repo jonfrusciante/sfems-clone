@@ -4,22 +4,22 @@
         <div class="card-panel">
             <!--<div class="page-flexbox-wrapper">-->
 
-                <form>
+                <form (ngSubmit)="login()">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="username" type="text" class="validate">
+                            <input id="username" [(ngModel)]="email" name="email" type="text" class="validate">
                             <label for="username">Username</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="password" type="password" class="validate">
+                            <input id="password" [(ngModel)]="password" name="password" type="password" class="validate">
                             <label for="password">Password</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <a class="waves-effect waves-light btn-large">Login</a>
+                            <button class="waves-effect waves-light btn-large" type="submit">Login</button>
                         </div>
                     </div>
                 </form>

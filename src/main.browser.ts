@@ -9,6 +9,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 import { PLATFORM_PROVIDERS } from './platform/browser';
 import { ENV_PROVIDERS, decorateComponentRef } from './platform/environment';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
+import { AuthGuard, AuthService, AUTH_PROVIDERS, UnauthGuard } from './app/core/auth';
 
 /*
 * App Component
@@ -27,7 +28,10 @@ export function main(initialHmrState?: any): Promise<any> {
     ...PLATFORM_PROVIDERS,
     ...ENV_PROVIDERS,
     ...APP_PROVIDERS,
-    FIREBASE_PROVIDERS,
+    FIREBASE_PROVIDERS, 
+    AUTH_PROVIDERS,
+    AuthGuard
+
   ])
   .then(decorateComponentRef)
   .catch(err => console.error(err));

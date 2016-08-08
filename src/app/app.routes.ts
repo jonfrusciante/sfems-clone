@@ -1,29 +1,31 @@
 import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
-import { RouterConfig } from '@angular/router';
+import { provideRouter, ROUTER_DIRECTIVES, RouterConfig }  from '@angular/router';
 import { Home } from './home';
 import { NoContent } from './no-content';
 import { Login } from './login';
 import { BookACrew } from './book-a-crew';
 
 import { DataResolver } from './app.resolver';
+import { AuthGuard, UnauthGuard } from './core/auth';
 
 export const routes: RouterConfig = [
-  { path: '',      component: Home },
-  { path: 'login', component: Login },
-  { path: 'home',  component: Home },
-  { path: 'book-a-crew',  component: BookACrew },
+  { path: '',      component: Home, canActivate: [AuthGuard]  },
+  { path: 'login', component: Login, canActivate: [UnauthGuard] },
+  { path: 'home',  component: Home, canActivate: [AuthGuard] },
+  { path: 'book-a-crew',  component: BookACrew, canActivate: [AuthGuard] },
   // make sure you match the component type string to the require in asyncRoutes
-  { path: 'about', component: 'About',
+  { path: 'about', component: 'About', canActivate: [AuthGuard],
     resolve: {
       'yourData': DataResolver
-    }},
+    }
+  },
   // async components with children routes must use WebpackAsyncRoute
   { path: 'detail', component: 'Detail',
-    canActivate: [ WebpackAsyncRoute ],
+    canActivate: [ WebpackAsyncRoute, AuthGuard ],
     children: [
       { path: '', component: 'Index' }  // must be included
     ]},
-  { path: '**',    component: NoContent },
+  { path: '**',    component: NoContent, canActivate: [UnauthGuard] },
 ];
 
 // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
