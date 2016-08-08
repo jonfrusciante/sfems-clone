@@ -25,7 +25,7 @@ export const routes: RouterConfig = [
     children: [
       { path: '', component: 'Index' }  // must be included
     ]},
-  { path: '**',    component: NoContent, canActivate: [UnauthGuard] },
+  { path: '**',    component: NoContent, canActivate: [AuthGuard] },
 ];
 
 // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
