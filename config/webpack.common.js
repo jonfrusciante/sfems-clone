@@ -168,7 +168,7 @@ module.exports = {
         loader: 'css-to-string-loader!css-loader'
       },
 
-      { test: /materialize\.css$/,   loader: 'style-loader!css-loader' },
+      // { test: /materialize\.css$/,   loader: 'style-loader!css-loader' },
 
 
       { test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, loader: 'url-loader?limit=100000' },
