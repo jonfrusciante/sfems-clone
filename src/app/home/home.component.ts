@@ -35,10 +35,10 @@ import { Card } from '../card';
 export class Home {
   // Set our default values
   localState = { value: '' };
-  stuff: FirebaseListObservable<any[]>;
+  people: FirebaseListObservable<any[]>;
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title, af: AngularFire) {
-    this.stuff = af.database.list('/stuff');
+    this.people = af.database.list('/people');
   }
 
   ngOnInit() {
