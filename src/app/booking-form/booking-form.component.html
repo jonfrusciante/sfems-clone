@@ -1,13 +1,13 @@
 <form [ngFormModel]="form" novalidate (submit)="onSubmit()">
     <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s12">
             <input id="firstname" type="text" class="validate" ngControl="firstname" #firstname="ngForm">
             <div *ngIf="firstname.touched && !firstname.valid" class="alert alert-danger">
                 First Name is required
             </div>
             <label for="first_name">First Name</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field col s12">
             <input id="lastname" type="text" class="validate" ngControl="lastname" #lastname="ngForm">
             <div *ngIf="lastname.touched && !lastname.valid" class="alert alert-danger">
                 Last Name is required
@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col s12">
-            <button class="waves-effect waves-light btn-large" type="submit" [disabled]="(!form.valid || disabled)"><i class="material-icons right">cloud</i>Submit</button>
+            <button class="waves-effect waves-light btn-large" type="submit" [disabled]="(!form.valid || disabled)" style="width: 100%"><i class="material-icons right">cloud</i>Submit</button>
         </div>
     </div>
 </form>
