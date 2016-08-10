@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
 import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
+import { Person } from '../models/person.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { BookingForm } from '../booking-form';
-import { CrewList } from '../crew-list';
 
 @Component({
-  selector: 'kn-book-a-crew',
-  templateUrl: 'book-a-crew.component.html',
-  directives: [MaterializeDirective, BookingForm, CrewList, Container],
+  selector: 'kn-crew-list',
+  templateUrl: 'crew-list.component.html',
+  directives: [MaterializeDirective, Container],
   styles: [``]
 })
-export class BookACrew {
-  form: ControlGroup;
-  people: FirebaseListObservable<any[]>;
+export class CrewList {
+  person: Person;
+  people: FirebaseListObservable<Person[]>;
 
   constructor(private af: AngularFire) {
   }
 
   ngOnInit() {
     this.people = this.af.database.list('/people');   
+    console.log(this.people); 
   }
 
 }
