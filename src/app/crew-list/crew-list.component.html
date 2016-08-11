@@ -1,8 +1,15 @@
-  <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
-    <li *ngFor="let person of people | async">
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ person.firstname }} {{ person.lastname }}</div>
-      <div class="collapsible-body">
-        <p>{{ person | json }}</p>
-      </div>
-    </li>
-  </ul>
+<ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+  <li *ngFor="let person of people | async">
+    <div class="collapsible-header collection">
+      <li class="collection-item avatar">
+        <img src="assets/img/yuna.jpg" alt="" class="circle">
+        <span class="title">{{ person.firstname }} {{ person.lastname }}</span>
+        <p>noddysouthgate@gmail.com</p>
+        <a href="#!" class="secondary-content "><i class="material-icons">info_outline</i></a>
+      </li>
+    </div>
+    <div class="collapsible-body">
+      <p>{{ person | json }}</p>
+    </div>
+  </li>
+</ul>
