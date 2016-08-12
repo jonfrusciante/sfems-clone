@@ -1,15 +1,81 @@
-<ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
-  <li *ngFor="let person of people | async">
-    <div class="collapsible-header collection">
-      <li class="collection-item avatar">
-        <img src="assets/img/yuna.jpg" alt="" class="circle">
-        <span class="title">{{ person.firstname }} {{ person.lastname }}</span>
-        <p>noddysouthgate@gmail.com</p>
-        <a href="#!" class="secondary-content "><i class="material-icons">info_outline</i></a>
-      </li>
-    </div>
-    <div class="collapsible-body">
-      <p>{{ person | json }}</p>
-    </div>
-  </li>
-</ul>
+<div class="container">
+  <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
+    <li *ngFor="let person of people | async">
+      <div class="collapsible-header collection">
+        <li class="collection-item avatar">
+          <img src="assets/img/yuna.jpg" alt="" class="circle">
+          <span class="title">{{ person.firstname }} {{ person.lastname }}</span>
+          <p>noddysouthgate@gmail.com</p>
+          <a href="#!" class="secondary-content "><i class="material-icons">info_outline</i></a>
+        </li>
+      </div>
+      <div class="collapsible-body">
+        <hr>
+        <div class="">
+          <table class="centered">
+            <thead>
+              <tr>
+                <th data-field="id">Name</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>Alvin</td>
+                <td>Eclair</td>
+                <td>$0.87</td>
+              </tr>
+              <tr>
+                <td>Alan</td>
+                <td>Jellybean</td>
+                <td>$3.76</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+              <tr>
+                <td>Jonathan</td>
+                <td>Lollipop</td>
+                <td>$7.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

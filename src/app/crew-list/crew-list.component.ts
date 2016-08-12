@@ -8,7 +8,16 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   selector: 'kn-crew-list',
   templateUrl: 'crew-list.component.html',
   directives: [MaterializeDirective, Container],
-  styles: [``]
+  styles: [`
+    .collapsible .collection {
+        margin: 0;
+        border: none;
+        margin-bottom: -5px;
+    }
+    .collection .collection-item {
+        padding-top: 20px;
+    }
+  `]
 })
 export class CrewList {
   person: Person;
