@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card-panel">
+        <table class="striped">
+          <thead>
+            <tr>
+              <th data-field="id">First Name</th>
+              <th data-field="name">Last Name</th>
+              <th data-field="price">Email</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let person of people | async">
+              <td>{{ person.firstname }}</td>
+              <td>{{ person.lastname }}</td>
+              <td>noddysouthgate@gmail.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

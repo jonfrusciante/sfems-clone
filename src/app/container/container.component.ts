@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { TopNav } from '../top-nav';
 import { Footer } from '../footer';
+import {MaterializeDirective} from "angular2-materialize";
 
 @Component({
   selector: 'container',
@@ -8,7 +9,7 @@ import { Footer } from '../footer';
   styleUrls: [
     './container.style.css'
   ],
-  directives: [TopNav, Footer],
+  directives: [TopNav, Footer, MaterializeDirective],
   templateUrl: './container.component.html'
 })
 export class Container {
