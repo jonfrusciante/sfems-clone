@@ -12,7 +12,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
     .collapsible .collection {
         margin: 0;
         border: none;
-        margin-bottom: -5px;
+        margin-bottom: -10px;
     }
     .collection .collection-item {
         padding-top: 20px;

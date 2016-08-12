@@ -1,13 +1,21 @@
- html {
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
-  }
-  
-  .page-flexbox-wrapper {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+html {
+  font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
 
-  main {
-    flex: 1 1 auto;
-  }
+body {
+  background-color: #fafafa;
+}
+
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.collapsible-body {
+    background-color: #fff;
+}
