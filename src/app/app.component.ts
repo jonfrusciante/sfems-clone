@@ -2,6 +2,7 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { provideRouter, ROUTER_DIRECTIVES, RouterConfig }  from '@angular/router';
 
 import { AppState } from './app.service';
 
@@ -16,7 +17,7 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.style.css'
   ],
-  directives: [],
+  directives: [ROUTER_DIRECTIVES],
   templateUrl: './app.component.html'
 })
 export class App {
