@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
-import { Person } from '../models/person.model';
+import { Booking } from '../models/booking.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -20,15 +20,15 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   `]
 })
 export class CrewList {
-  person: Person;
-  people: FirebaseListObservable<Person[]>;
+  booking: Booking;
+  bookings: FirebaseListObservable<Booking[]>;
 
   constructor(private af: AngularFire) {
   }
 
   ngOnInit() {
-    this.people = this.af.database.list('/people');   
-    console.log(this.people); 
+    this.bookings = this.af.database.list('/bookings');   
+    console.log(this.bookings); 
   }
 
 }

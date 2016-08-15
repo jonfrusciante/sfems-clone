@@ -3,6 +3,7 @@ import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES, ControlGroup, FormBuilder, Validators, AbstractControl } from '@angular/common';
 import { Person } from '../models/person.model';
+import { Booking } from '../models/booking.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
@@ -14,23 +15,29 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class BookingForm {
   form: ControlGroup;
-  person: Person;
-  people: FirebaseListObservable<Person[]>;
+  booking: Booking;
+  bookings: FirebaseListObservable<Booking[]>;
 
   constructor(private formBuilder: FormBuilder, private af: AngularFire) {
     this.form = formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required]
+      name: ['', Validators.required],
+      date: ['', Validators.required],
+      time: ['', Validators.required],
+      venue: ['', Validators.required],
+      location: ['', Validators.required],
+      size: ['', Validators.required],
+      hours: ['', Validators.required],
+      specialRequirements: ['', Validators.required]
     });
   }
 
   ngOnInit() {
-    this.people = this.af.database.list('/people');   
+    this.bookings = this.af.database.list('/bookings');   
   }
 
   onSubmit() {
-    this.person = this.form.value;
-    this.people.push(this.person);
+    this.booking = this.form.value;
+    this.bookings.push(this.booking);
   }
 
 }

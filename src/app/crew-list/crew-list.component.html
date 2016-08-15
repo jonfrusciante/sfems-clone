@@ -1,10 +1,10 @@
 <div class="container">
   <ul materialize="collapsible" class="collapsible popout" data-collapsible="accordion">
-    <li *ngFor="let person of people | async">
+    <li *ngFor="let booking of bookings | async">
       <div class="collapsible-header collection">
         <li class="collection-item avatar">
           <img src="assets/img/yuna.jpg" alt="" class="circle">
-          <span class="title">{{ person.firstname }} {{ person.lastname }}</span>
+          <span class="title">{{ booking.name }} {{ booking.date }}</span>
           <p>noddysouthgate@gmail.com</p>
           <a href="#!" class="secondary-content "><i class="material-icons">info_outline</i></a>
         </li>
