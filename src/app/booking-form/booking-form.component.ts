@@ -8,6 +8,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 @Component({
   selector: 'kn-booking-form',
   templateUrl: 'booking-form.component.html',
+  providers: [FormBuilder],
   directives: [MaterializeDirective, Container, FORM_DIRECTIVES],
   styles: [``]
 })

@@ -1,3 +1,7 @@
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { AppModule }              from './app/app.module';
+// platformBrowserDynamic().bootstrapModule(AppModule);
+
 /*
  * Providers provided by Angular
  */
@@ -16,6 +20,9 @@ import { AuthGuard, AuthService, AUTH_PROVIDERS, UnauthGuard } from './app/core/
 * our top level component that holds all of our components
 */
 import { App, APP_PROVIDERS } from './app';
+
+
+
 
 /*
  * Bootstrap our Angular app with a top level component `App` and inject

@@ -1,6 +1,7 @@
 import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
 import { provideRouter, ROUTER_DIRECTIVES, RouterConfig }  from '@angular/router';
 import { Home } from './home';
+import { About } from './about';
 import { NoContent } from './no-content';
 import { Login } from './login';
 import { Register } from './register';
@@ -16,7 +17,7 @@ export const routes: RouterConfig = [
   { path: 'home',  component: Home, canActivate: [AuthGuard] },
   { path: 'book-a-crew',  component: BookACrew, canActivate: [AuthGuard] },
   // make sure you match the component type string to the require in asyncRoutes
-  { path: 'about', component: 'About', canActivate: [AuthGuard],
+  { path: 'about', component: About, canActivate: [AuthGuard],
     resolve: {
       'yourData': DataResolver
     }
