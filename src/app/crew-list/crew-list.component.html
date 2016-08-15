@@ -4,9 +4,13 @@
       <div class="collapsible-header collection">
         <li class="collection-item avatar">
           <img src="assets/img/yuna.jpg" alt="" class="circle">
-          <span class="title">{{ booking.name }} {{ booking.date }}</span>
-          <p>noddysouthgate@gmail.com</p>
-          <a href="#!" class="secondary-content "><i class="material-icons">info_outline</i></a>
+          <span class="title">{{ booking.name }}</span>
+          <p>{{ booking.date }}</p>
+          <a href="#!" class="secondary-content ">
+            <div class="chip">
+              <img src="assets/img/yuna.jpg" alt="Contact Person"> {{ booking.date | date}}
+            </div>
+          </a>
         </li>
       </div>
       <div class="collapsible-body">
