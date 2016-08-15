@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
+import { TimePicker } from '../time-picker';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES, ControlGroup, FormBuilder, Validators, AbstractControl } from '@angular/common';
 import { Person } from '../models/person.model';
 import { Booking } from '../models/booking.model';
@@ -10,7 +11,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   selector: 'kn-booking-form',
   templateUrl: 'booking-form.component.html',
   providers: [FormBuilder],
-  directives: [MaterializeDirective, Container, FORM_DIRECTIVES],
+  directives: [MaterializeDirective, Container, FORM_DIRECTIVES, TimePicker],
   styles: [``]
 })
 export class BookingForm {

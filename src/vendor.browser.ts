@@ -20,6 +20,8 @@ import '@angularclass/request-idle-callback';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
+import 'materialize-clockpicker/dist/js/materialize.clockpicker.js';
+
 if ('production' === ENV) {
   // Production
 
