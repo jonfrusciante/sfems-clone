@@ -14,7 +14,6 @@ export class TimePicker {
     this.elementRef = elementRef;
   }
   ngOnInit() {
-    console.log(jQuery(this.elementRef.nativeElement));
     jQuery(this.elementRef.nativeElement).pickatime({
       autoclose: false,
       twelvehour: false

@@ -14,16 +14,11 @@
             </div>
             <label for="date">Date</label>
         </div>
-
-<time-picker></time-picker>
-
-
-
         <div class="input-field col s12">
-            <input id="time" type="text" class="validate" ngControl="time" #time="ngForm">
-            <div *ngIf="time.touched && !time.valid" class="alert alert-danger">
+            <input id="time" type="time" class="validate" ngControl="time" #time="ngForm">
+            <!--<div *ngIf="time.touched && !time.valid" class="alert alert-danger">
                 Time is required
-            </div>
+            </div>-->
             <label for="time">Time</label>
         </div>
         <div class="input-field col s12">
