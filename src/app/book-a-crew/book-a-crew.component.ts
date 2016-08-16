@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
@@ -18,12 +18,19 @@ import { Footer } from '../footer';
 export class BookACrew {
   people: FirebaseListObservable<any[]>;
   selectedDate: Date = new Date();
+  day: number = 1;
 
   constructor(private af: AngularFire) {
   }
 
   ngOnInit() {
-    this.people = this.af.database.list('/people');   
+    this.people = this.af.database.list('/people');  
+  }
+
+  getDay(date: string): void {
+    if (date) {
+        this.day = new Date(date).getDay();
+    }
   }
 
 }

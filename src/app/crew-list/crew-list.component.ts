@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MaterializeDirective } from "angular2-materialize";
 import { Container } from '../container';
 import { Booking } from '../models/booking.model';
@@ -20,6 +20,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   `]
 })
 export class CrewList {
+  @Input() selectedDate: string;
+
   booking: Booking;
   bookings: FirebaseListObservable<Booking[]>;
 
@@ -27,8 +29,7 @@ export class CrewList {
   }
 
   ngOnInit() {
-    this.bookings = this.af.database.list('/bookings');   
-    console.log(this.bookings); 
+    this.bookings = this.af.database.list('/bookings');
   }
 
 }
