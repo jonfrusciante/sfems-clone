@@ -17,6 +17,7 @@ import { Footer } from '../footer';
 })
 export class BookACrew {
   people: FirebaseListObservable<any[]>;
+  selectedDate: Date = new Date();
 
   constructor(private af: AngularFire) {
   }

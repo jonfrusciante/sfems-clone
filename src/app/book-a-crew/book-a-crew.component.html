@@ -1,8 +1,15 @@
 <div class="page-flexbox-wrapper">
     <header>
         <top-nav></top-nav>
+
     </header>
     <main>
+        <div class="row">
+            <div class="container">
+            <input id="birthdate" value="{{selectedDate | date:'dd/mm/yyyy'}}" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 15, format: 'dd/mm/yyyy'}]"
+                type="text" />
+            </div>
+        </div>
         <div class="row">
             <ul class="tabs" materialize="tabs">
                 <li class="tab col s3"><a class="active" href="#test2">SUNDAY</a></li>

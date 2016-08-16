@@ -13,6 +13,8 @@ import { ROUTER_DIRECTIVES, Router } from '@angular/router';
   directives: [MaterializeDirective]
 })
 export class TopNav {
+  selectedDate: Date = new Date();
+
   constructor(public af: AngularFire, private router: Router) {
 
   }
