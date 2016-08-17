@@ -5,41 +5,47 @@
     <main>
         <div class="row">
             <div class="container">
-                <input [(ngModel)]="selectedDate" value="{{selectedDate | date:'yyyy/MM/dd'}}" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 15, format: 'yyyy/mm/dd'}]"
+                <input [(ngModel)]="selectedDate" (ngModelChange)="getDay($event)" value="{{selectedDate | date:'yyyy/MM/dd'}}" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 15, format: 'yyyy/mm/dd'}]"
                     type="text" />
             </div>
         </div>
         <div class="row">
-            {{day}}
             <ul class="tabs" materialize="tabs">
-                <li class="tab col s3"><a [class.active]="day == 0" href="#0">SUNDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 1" href="#1">MONDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 2" href="#2">TUESDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 3" href="#3">WEDNESDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 4" href="#4">THURSDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 5" href="#5">FRIDAY</a></li>
-                <li class="tab col s3"><a [class.active]="day == 6" href="#6">SATURDAY</a></li>
+                <li class="tab col s3"><a href="#0">SUNDAY</a></li>
+                <li class="tab col s3"><a href="#1">MONDAY</a></li>
+                <li class="tab col s3"><a href="#2">TUESDAY</a></li>
+                <li class="tab col s3"><a href="#3">WEDNESDAY</a></li>
+                <li class="tab col s3"><a href="#4">THURSDAY</a></li>
+                <li class="tab col s3"><a href="#5">FRIDAY</a></li>
+                <li class="tab col s3"><a href="#6">SATURDAY</a></li>
             </ul>
         </div>
         <div id="0" class="col s12">
+            S
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="1" class="col s12">
+            M
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="2" class="col s12">
+            T
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="3" class="col s12">
+            W
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="4" class="col s12">
+            T
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="5" class="col s12">
+            F
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         <div id="6" class="col s12">
+            S
             <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
         </div>
         
