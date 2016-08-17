@@ -4,51 +4,14 @@
     </header>
     <main>
         <div class="row">
-            <div class="container">
-                <input [(ngModel)]="selectedDate" (ngModelChange)="getDay($event)" value="{{selectedDate | date:'yyyy/MM/dd'}}" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 15, format: 'yyyy/mm/dd'}]"
-                    type="text" />
+            <div id="0" class="col s12">
+                <div class="container">
+                    <input class="brand-logo center" [(ngModel)]="selectedDate" materialize="pickadate" [materializeParams]="[{selectMonths: true, selectYears: 15, format: 'yyyy/mm/dd'}]"
+                        type="text" />
+                </div>
+                <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
             </div>
         </div>
-        <div class="row">
-            <ul class="tabs" materialize="tabs">
-                <li class="tab col s3"><a href="#0">SUNDAY</a></li>
-                <li class="tab col s3"><a href="#1">MONDAY</a></li>
-                <li class="tab col s3"><a href="#2">TUESDAY</a></li>
-                <li class="tab col s3"><a href="#3">WEDNESDAY</a></li>
-                <li class="tab col s3"><a href="#4">THURSDAY</a></li>
-                <li class="tab col s3"><a href="#5">FRIDAY</a></li>
-                <li class="tab col s3"><a href="#6">SATURDAY</a></li>
-            </ul>
-        </div>
-        <div id="0" class="col s12">
-            S
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="1" class="col s12">
-            M
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="2" class="col s12">
-            T
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="3" class="col s12">
-            W
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="4" class="col s12">
-            T
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="5" class="col s12">
-            F
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        <div id="6" class="col s12">
-            S
-            <kn-crew-list [selectedDate]="selectedDate"></kn-crew-list>
-        </div>
-        
 
         <ul id="slide-out-form" class="side-nav">
             <kn-booking-form></kn-booking-form>

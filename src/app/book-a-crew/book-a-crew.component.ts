@@ -20,7 +20,6 @@ declare var jQuery:any;
 export class BookACrew {
   people: FirebaseListObservable<any[]>;
   selectedDate: Date = new Date();
-  day: number;
 
   constructor(private af: AngularFire) {
   }
@@ -29,11 +28,8 @@ export class BookACrew {
     this.people = this.af.database.list('/people');
   }
 
-  getDay(date: string): void {
-    if (date) {
-      this.day = new Date(date).getDay();
-      jQuery('ul.tabs').tabs('select_tab', this.day);
-    }
+  ngAfterViewInit() {
+    // jQuery('ul.tabs').tabs('select_tab', this.selectedDate.getDay());
   }
 
 }
