@@ -8,11 +8,18 @@
         <a href="#!" class="brand-logo">KNOOGA</a>
       </li>
     </ul>
-    <ul id="nav-mobile" class="right">
+    <ul class="right hide-on-med-and-down">
       <li>
-        <!-- Modal Trigger -->
-        <a materialize="leanModal" [materializeParams]="[{dismissible: true}]" class="modal-trigger" href="#modal1">Modal</a>
+        <!-- Dropdown Trigger -->
+        <a materialize="dropdown" class="dropdown-button" href="#!" data-activates="auth-dropdown">{{ (af.auth | async).auth.email }}<i class="material-icons right">arrow_drop_down</i></a>
       </li>
+      <!-- Dropdown Structure -->
+      <ul id='auth-dropdown' class='dropdown-content'>
+        <li><a [routerLink]=" ['/my-profile'] ">My Profile</a></li>
+        <li class="divider"></li>
+        <li><a [routerLink]=" ['/about'] ">About</a></li>
+        <li *ngIf="af.auth"><a (click)="logout()">Log out</a></li>
+      </ul>
     </ul>
   </div>
 </nav>
@@ -38,14 +45,3 @@
   <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   <li *ngIf="af.auth"><a (click)="logout()"><i class="material-icons">cloud</i> Log out</a></li>
 </ul>
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Modal Header</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>

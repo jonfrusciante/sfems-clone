@@ -6,6 +6,7 @@ import { NoContent } from './no-content';
 import { Login } from './login';
 import { Register } from './register';
 import { BookACrew } from './book-a-crew';
+import { MyProfile } from './my-profile';
 
 import { DataResolver } from './app.resolver';
 import { AuthGuard, UnauthGuard } from './core/auth';
@@ -16,6 +17,7 @@ export const routes: RouterConfig = [
   { path: 'register', component: Register, canActivate: [UnauthGuard] },
   { path: 'home',  component: Home, canActivate: [AuthGuard] },
   { path: 'book-a-crew',  component: BookACrew, canActivate: [AuthGuard] },
+  { path: 'my-profile',  component: MyProfile, canActivate: [AuthGuard] },
   // make sure you match the component type string to the require in asyncRoutes
   { path: 'about', component: About, canActivate: [AuthGuard],
     resolve: {
