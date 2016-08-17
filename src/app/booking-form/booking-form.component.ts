@@ -13,7 +13,14 @@ declare var jQuery: any;
   templateUrl: 'booking-form.component.html',
   providers: [FormBuilder],
   directives: [MaterializeDirective, Container, FORM_DIRECTIVES, TimePicker],
-  styles: [``]
+  styles: [`
+    .field-error {
+        color: red;
+        margin-top: -15px;
+        margin-bottom: -5px;
+        font-size: 80%;
+    }
+  `]
 })
 export class BookingForm {
   elementRef: ElementRef;
@@ -40,7 +47,7 @@ export class BookingForm {
       autoclose: false,
       twelvehour: false
     });
-    this.bookings = this.af.database.list('/bookings');   
+    this.bookings = this.af.database.list('/bookings');
   }
 
   onSubmit() {

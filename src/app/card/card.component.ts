@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { Booking } from '../models/booking.model';
 
 @Component({
   selector: 'kn-card',
@@ -9,5 +10,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   templateUrl: './card.component.html'
 })
 export class Card {
+
+  @Input() booking: Booking;
 
 }

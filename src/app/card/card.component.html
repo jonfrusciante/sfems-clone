@@ -1,13 +1,46 @@
 <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="assets/img/office.jpg">
-    </div>
     <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-        <p><a href="#">This is a link</a></p>
+        <span class="card-title">{{booking?.name}}</span>
+        <div class="row">
+            <div class="col s5">
+                <b>Date: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.date}}</span>
+            </div>
+            <div class="col s5">
+                <b>Time: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.time}} 12:00</span>
+            </div>
+            <div class="col s5">
+                <b>Venue: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.venue}}, {{booking?.location}}</span>
+            </div>
+            <div class="col s5">
+                <b>Crew Size: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.size}}</span>
+            </div>
+            <div class="col s5">
+                <b>Hours Required: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.hours}}</span>
+            </div>
+            <div class="col s5">
+                <b>Special Requirements: </b>
+            </div>
+            <div class="col s7">
+                <span class="grey-text">{{booking?.specialRequirements}}</span>
+            </div>
+        </div>
     </div>
-    <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    <div class="card-action">
+        <a href="#">This is a link</a>
     </div>
 </div>

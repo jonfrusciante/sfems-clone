@@ -1,66 +1,69 @@
 <form [ngFormModel]="form" novalidate (submit)="onSubmit()">
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="name" type="text" class="validate" ngControl="name" #name="ngForm">
-            <div *ngIf="name.touched && !name.valid" class="alert alert-danger">
-                Name is required
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">BOOK A CREW</span>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" type="text" class="validate" ngControl="name" #name="ngForm">
+                    <div *ngIf="name.touched && !name.valid" class="field-error">
+                        Name is required
+                    </div>
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="date" materialize="pickadate" class="validate" [materializeParams]="[{selectMonths: true, selectYears: 15}]" type="text"
+                        ngControl="date" #date="ngForm" />
+                    <div *ngIf="date.touched && !date.valid" class="field-error">
+                        Date is required
+                    </div>
+                    <label for="date">Date</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="time" type="time" class="validate" ngControl="time" #time="ngForm">
+                    <div *ngIf="time.touched && !time.valid" class="field-error">
+                        Time is required
+                    </div>
+                    <label for="time">Time</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="venue" type="text" class="validate" ngControl="venue" #venue="ngForm">
+                    <div *ngIf="venue.touched && !venue.valid" class="field-error">
+                        Venue is required
+                    </div>
+                    <label for="venue">Venue</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="location" type="text" class="validate" ngControl="location" #location="ngForm">
+                    <div *ngIf="location.touched && !location.valid" class="field-error">
+                        Location is required
+                    </div>
+                    <label for="location">Location</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="specialRequirements" class="materialize-textarea" ngControl="specialRequirements" #specialRequirements="ngForm"></textarea>
+                    <div *ngIf="specialRequirements.touched && !specialRequirements.valid" class="field-error">
+                        Special Requirements is required
+                    </div>
+                    <label for="Special Requirements">Special Requirements</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="size" type="number" class="validate" ngControl="size" #size="ngForm">
+                    <div *ngIf="size.touched && !size.valid" class="field-error">
+                        Size is required
+                    </div>
+                    <label for="size">Size</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="hours" type="number" class="validate" ngControl="hours" #hours="ngForm">
+                    <div *ngIf="hours.touched && !hours.valid" class="field-error">
+                        Hours is required
+                    </div>
+                    <label for="hours">Hours</label>
+                </div>
             </div>
-            <label for="name">Name</label>
         </div>
-        <div class="input-field col s12">
-            <input id="date" materialize="pickadate" class="validate" [materializeParams]="[{selectMonths: true, selectYears: 15}]" type="text" ngControl="date" #date="ngForm" />
-            <div *ngIf="date.touched && !date.valid" class="alert alert-danger">
-                Date is required
-            </div>
-            <label for="date">Date</label>
-        </div>
-        <div class="input-field col s12">
-            <input id="time" type="time" class="validate" ngControl="time" #time="ngForm">
-            <!--<div *ngIf="time.touched && !time.valid" class="alert alert-danger">
-                Time is required
-            </div>-->
-            <label for="time">Time</label>
-        </div>
-        <div class="input-field col s12">
-            <input id="venue" type="text" class="validate" ngControl="venue" #venue="ngForm">
-            <div *ngIf="venue.touched && !venue.valid" class="alert alert-danger">
-                Venue is required
-            </div>
-            <label for="venue">Venue</label>
-        </div>
-        <div class="input-field col s12">
-            <input id="location" type="text" class="validate" ngControl="location" #location="ngForm">
-            <div *ngIf="location.touched && !location.valid" class="alert alert-danger">
-                Location is required
-            </div>
-            <label for="location">Location</label>
-        </div>
-        <div class="input-field col s12">
-            <input id="size" type="number" class="validate" ngControl="size" #size="ngForm">
-            <div *ngIf="size.touched && !size.valid" class="alert alert-danger">
-                Size is required
-            </div>
-            <label for="size">Size</label>
-        </div>
-        <div class="input-field col s12">
-            <input id="hours" type="number" class="validate" ngControl="hours" #hours="ngForm">
-            <div *ngIf="hours.touched && !hours.valid" class="alert alert-danger">
-                Hours is required
-            </div>
-            <label for="hours">Hours</label>
-        </div>
-        <div class="input-field col s12">
-            <textarea id="specialRequirements" class="materialize-textarea" ngControl="specialRequirements" #specialRequirements="ngForm"></textarea>
-            <div *ngIf="specialRequirements.touched && !specialRequirements.valid" class="alert alert-danger">
-                Special Requirements is required
-            </div>
-            <label for="Special Requirements">Special Requirements</label>
-        </div>
-        
-    </div>
-    <div class="row">
-        <div class="col s12">
-            <button class="waves-effect waves-light btn-large" type="submit" [disabled]="(!form.valid || disabled)" style="width: 100%"><i class="material-icons right">cloud</i>Submit</button>
+        <div class="card-action">
+            <button class="waves-effect waves-light btn-large" type="submit" [disabled]="(!form.valid || disabled)">Submit</button>
         </div>
     </div>
 </form>

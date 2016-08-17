@@ -18,14 +18,13 @@ declare var jQuery:any;
   styles: [``]
 })
 export class BookACrew {
-  people: FirebaseListObservable<any[]>;
-  selectedDate: Date = new Date();
+  bookings: FirebaseListObservable<any[]>;
 
   constructor(private af: AngularFire) {
   }
 
   ngOnInit() {
-    this.people = this.af.database.list('/people');
+    this.bookings = this.af.database.list('/bookings');
   }
 
   ngAfterViewInit() {
