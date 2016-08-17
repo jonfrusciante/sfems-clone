@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { Container } from '../container';
+import { MaterializeDirective } from "angular2-materialize";
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 /*
  * We're loading this component asynchronously
@@ -8,34 +10,26 @@ import { Container } from '../container';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`My Profile` component loaded asynchronously');
-
 @Component({
   selector: 'my-profile',
   styles: [`
   `],
   directives: [Container],
-  template: `
-  <container>
-    <h1>My Profile</h1>
-    </container>
-  `
+  templateUrl: 'my-profile.component.html'
 })
 export class MyProfile {
-  localState;
-  constructor(public route: ActivatedRoute) {
+  me: any;
 
+  constructor(public af: AngularFire, private router: Router) {
   }
 
   ngOnInit() {
-    this.route
-      .data
-      .subscribe((data: any) => {
-        // your resolved data from route
-        this.localState = data.yourData;
-      });
-
-    console.log('hello `My Profile` component');
+    this.af.auth.subscribe(auth => {
+      this.af.database.object('/users/' + auth.uid)
+        .subscribe((me) => {
+          this.me = me;
+        });
+    });
   }
 
 }

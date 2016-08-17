@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import {MaterializeDirective} from "angular2-materialize";
+import { MaterializeDirective } from "angular2-materialize";
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 

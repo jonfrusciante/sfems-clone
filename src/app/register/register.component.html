@@ -8,6 +8,18 @@
             <form (ngSubmit)="register()">
                 <div class="row">
                     <div class="input-field col s12">
+                        <input id="firstName" [(ngModel)]="firstName" name="firstName" type="text" class="validate">
+                        <label for="firstName">First Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="lastName" [(ngModel)]="lastName" name="lastName" type="text" class="validate">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
                         <input id="username" [(ngModel)]="email" name="email" type="text" class="validate">
                         <label for="username">Username</label>
                     </div>

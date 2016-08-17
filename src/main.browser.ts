@@ -14,6 +14,7 @@ import { PLATFORM_PROVIDERS } from './platform/browser';
 import { ENV_PROVIDERS, decorateComponentRef } from './platform/environment';
 import { FIREBASE_PROVIDERS, defaultFirebase } from 'angularfire2';
 import { AuthGuard, AuthService, AUTH_PROVIDERS, UnauthGuard } from './app/core/auth';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 /*
 * App Component
@@ -37,8 +38,8 @@ export function main(initialHmrState?: any): Promise<any> {
     ...APP_PROVIDERS,
     FIREBASE_PROVIDERS, 
     AUTH_PROVIDERS,
-    AuthGuard
-
+    AuthGuard,
+disableDeprecatedForms(), provideForms()
   ])
   .then(decorateComponentRef)
   .catch(err => console.error(err));
